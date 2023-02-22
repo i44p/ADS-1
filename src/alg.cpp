@@ -6,6 +6,8 @@
 #include <cstdint>
 
 bool checkPrime(uint64_t value) {
+  if (value == 1) return false;
+
   if (value <= 3) return true;
 
   if (value % 2 == 0) return false;
@@ -42,9 +44,7 @@ uint64_t nextPrime(uint64_t value) {
 uint64_t sumPrime(uint64_t hbound) {
   uint64_t sum = 0;
 
-  for (uint64_t count = 0, index = 2; count < hbound;
-       count++, index = nextPrime(index))
-    sum += index;
+  for (uint64_t i = 0; i < hbound; i++) sum += checkPrime(i) ? i : 0;
 
   return sum;
 }
