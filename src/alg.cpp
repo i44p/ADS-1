@@ -21,7 +21,7 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
   uint64_t index = 0;
-  uint64_t value = 0;
+  uint64_t value = -1;
 
   do {
     value++;
